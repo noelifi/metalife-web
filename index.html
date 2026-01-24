@@ -3,84 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaLife - Kezdőlap</title>
+    <title>MetaLife RP</title>
+
     <style>
         body {
             margin: 0;
+            background: #000;
             font-family: Arial, sans-serif;
-            background-color: #0a0f1a;
+            color: #1e6bff;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            color: #1e6bff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
             color: white;
         }
 
-        header {
-            background-color: #05080f;
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 2px solid #0d47a1;
+        .discord-btn {
+            position: absolute;
+            left: 20px;
+            background: #5865F2;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
         }
 
-        nav a {
-            margin: 0 20px;
-            color: #4da3ff;
-            text-decoration: none;
+        .brand {
+            position: absolute;
+            right: 20px;
+            color: #1e6bff;
             font-size: 18px;
             font-weight: bold;
         }
 
-        nav a:hover {
+        /* HERO */
+        .hero {
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://images.pexels.com/photos/210182/pexels-photo-210182.jpeg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+        }
+
+        .hero-content {
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: right;
+            max-width: 450px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: #1e6bff;
+        }
+
+        .hero-text {
+            margin-top: 10px;
+            font-size: 18px;
             color: white;
         }
 
-        .container {
+        .hero-btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 26px;
+            background: #1e6bff;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* SECTION */
+        .section {
+            padding: 60px 10%;
+            background: black;
+        }
+
+        .section-title {
             text-align: center;
-            margin-top: 60px;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #1e6bff;
         }
 
-        .step-box {
-            background-color: #0d1b2a;
-            border: 1px solid #1b263b;
+        /* ILLEGAL / LEGAL */
+        .dual-box {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            flex: 1;
+            min-width: 280px;
+            background: #0a0a0a;
+            border: 1px solid #1e6bff;
+            border-radius: 12px;
             padding: 20px;
-            margin: 20px auto;
-            width: 60%;
-            border-radius: 10px;
         }
 
-        h1 {
-            color: #4da3ff;
+        .box img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .box-title {
+            margin-top: 15px;
+            font-size: 24px;
+            color: #1e6bff;
+        }
+
+        .box-text {
+            margin-top: 10px;
+            color: white;
+            font-size: 15px;
+        }
+
+        /* CTA */
+        .cta {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .cta-btn {
+            padding: 14px 30px;
+            background: #1e6bff;
+            color: white;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* 3 STEPS */
+        .steps {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 260px;
+            background: #0a0a0a;
+            border: 1px solid #1e6bff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .step-title {
+            font-size: 22px;
+            color: #1e6bff;
+            margin-bottom: 10px;
+        }
+
+        .step-text {
+            color: white;
+            font-size: 15px;
+        }
+
+        @media(max-width: 768px) {
+            .hero-title { font-size: 34px; }
+            .hero-content { right: 5%; left: 5%; text-align: center; }
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Kezdőlap</a>
-        <a href="whitelist.html">Whitelist</a>
-        <a href="szabalyzat.html">Szabályzat</a>
-        <a href="premium.html">Prémium Hub</a>
-        <a href="frakciok.html">Frakció Pályázatok</a>
-        <a href="kerelem.html">Kérelmek</a>
-        <a href="sugo.html">Súgó</a>
-    </nav>
-</header>
+<!-- NAVBAR -->
+<div class="navbar">
+    <a class="discord-btn" href="https://discord.gg/HvVTVevCuw">Discord</a>
 
-<div class="container">
-    <h1>Üdvözlünk a MetaLife RolePlay szerveren!</h1>
-    <p>Csatlakozz 3 egyszerű lépésben</p>
+    <a href="index.html">Kezdőlap</a>
+    <a href="whitelist.html">Whitelist</a>
+    <a href="szabalyzat.html">Szabályzat</a>
+    <a href="premium.html">Prémium</a>
+    <a href="frakciok.html">Frakciók</a>
+    <a href="kerelem.html">Kérelmek</a>
 
-    <div class="step-box">
-        <h2>1. Csatlakozz a Discord szerverhez</h2>
-        <p>👉 discord.gg/valami</p>
+    <div class="brand">MetaLife RP</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <div class="hero-title">Valami új vár rád!</div>
+        <div class="hero-text">
+            Fedezd fel Los Santos világát egy teljesen új szemszögből.  
+            Egy szerver, ahol a történeted tényleg számít.
+        </div>
+        <div class="hero-btn">Szeretnék csatlakozni</div>
+    </div>
+</div>
+
+<!-- ILLEGAL / LEGAL -->
+<div class="section">
+    <div class="dual-box">
+
+        <div class="box">
+            <img src="https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg">
+            <div class="box-title">ILLEGÁL</div>
+            <div class="box-text">
+                A MetaLife illegál világa tele van lehetőségekkel.  
+                Egyedi rablások, szervezetek és izgalmas helyzetek várnak rád,  
+                ahol minden döntésednek súlya van.
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg">
+            <div class="box-title">LEGÁL</div>
+            <div class="box-text">
+                Ha a tiszta, becsületes karrier utat választod,  
+                rengeteg egyedi munkalehetőség és fejlődési út áll előtted.  
+                A város minden területe új kihívásokat tartogat.
+            </div>
+        </div>
+
     </div>
 
-    <div class="step-box">
-        <h2>2. Töltsd ki a Whitelist űrlapot</h2>
-        <p>👉 A fenti menüben a Whitelist menüpont alatt</p>
+    <div class="cta">
+        <div class="cta-btn">Csatlakozz most, és válj a MetaLife legendájává</div>
     </div>
+</div>
 
-    <div class="step-box">
-        <h2>3. Lépj be a FiveM szerverre</h2>
-        <p>👉 F8 → connect 31.56.25.43:30120</p>
+<!-- 3 STEPS -->
+<div class="section">
+    <div class="section-title">Hogyan tudok csatlakozni?</div>
+
+    <div class="steps">
+
+        <div class="step">
+            <div class="step-title">1. Discord</div>
+            <div class="step-text">Csatlakozz a közösséghez!</div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">2. Whitelist</div>
+            <div class="step-text">Töltsd ki a jelentkezést!</div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">3. Szerver IP</div>
+            <div class="step-text">31.56.25.43:30120</div>
+        </div>
+
     </div>
 </div>
 
