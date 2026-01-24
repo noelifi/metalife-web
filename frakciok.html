@@ -2,15 +2,424 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Frakció Pályázatok - MetaLife</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaLife RP – Pályázatok</title>
+
     <style>
-        body { background-color: #0a0f1a; color: white; font-family: Arial; }
-        a { color: #4da3ff; }
+        body {
+            margin: 0;
+            background: #000;
+            font-family: Arial, sans-serif;
+            color: #1e6bff;
+        }
+
+        .content {
+            padding: 40px 10%;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+            color: #1e6bff;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-top: 30px;
+            color: #1e6bff;
+        }
+
+        p {
+            color: #c9d6ff;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* Accordion */
+        .accordion-item {
+            margin-top: 20px;
+            border: 1px solid #1e6bff;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #050505;
+        }
+
+        summary {
+            cursor: pointer;
+            padding: 14px 16px;
+            font-weight: bold;
+            color: #1e6bff;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "▼";
+            float: right;
+            font-size: 12px;
+            color: #1e6bff;
+        }
+
+        details[open] summary::after {
+            content: "▲";
+        }
+
+        .accordion-content {
+            padding: 20px;
+            border-top: 1px solid #1e6bff;
+        }
+
+        /* Form */
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #1e6bff;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            background: #000;
+            border: 1px solid #1e6bff;
+            border-radius: 6px;
+            color: #1e6bff;
+            margin-top: 5px;
+        }
+
+        textarea {
+            height: 120px;
+        }
+
+        .big-textarea {
+            height: 200px;
+        }
+
+        .file-drop {
+            width: 100%;
+            padding: 40px;
+            border: 2px dashed #1e6bff;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 10px;
+            color: #1e6bff;
+        }
+
+        .submit-btn {
+            display: block;
+            margin: 40px auto;
+            padding: 15px 40px;
+            background: #1e6bff;
+            color: #000;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #4d8dff;
+        }
+
+        .checkbox-area {
+            margin-top: 20px;
+        }
+
+        .checkbox-area label {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 14px;
+        }
     </style>
 </head>
+
 <body>
-<h1>Frakció Pályázatok</h1>
-<p>Itt tudod majd megjeleníteni a frakciók jelentkezési űrlapjait.</p>
-<a href="index.html">Vissza</a>
+
+<div class="content">
+
+    <h1>Aktív pályázatok</h1>
+
+    <p>
+        Üdvözlünk a pályázatoknál!<br><br>
+        Az alábbi lenyíló fülekre kattintva olvashatod az adott frakcióhoz rendelt leírásokat és pályázási feltételeket.
+        Tájékoztatunk titeket, hogy a frakciók élére csak komoly jelentkezőket és nagyon jól megírt pályázatokat tudunk
+        elfogadni, így ha szeretnéd, hogy esélyed legyen, jól gondold át a pályázatot mielőtt beküldöd. Kérünk, figyelj
+        a helyesírásra is.<br><br>
+
+        Figyelj a feltételek betartására! Amennyiben később kiderül, hogy valamelyik feltételnek nem felel meg a
+        megnyert frakció leadere vagy al-leadere, a frakció CK-ban fog részesülni, és az illetékes vezetőt örökösen
+        kitiltjuk a szerverről!<br><br>
+
+        A pályázatok folyamatosan nyitva vannak és minden héten átnézzük őket. Emiatt kérünk, ne nyissatok ticketet.
+        A sikeres pályázóknak minden esetben jelezni fogunk.
+    </p>
+
+    <!-- MAFFIA -->
+    <div class="accordion-item">
+        <details>
+            <summary>MAFFIA</summary>
+            <div class="accordion-content">
+
+                <h2>Maffia pályázat</h2>
+
+                <p><b>Leader minimum életkor:</b> 18<br>
+                <b>Al-Leader minimum életkor:</b> 16<br>
+                <b>Minimum kezdő létszám:</b> 6 fő</p>
+
+                <p><b>Leader feltételek:</b><br>
+                – 6 hónapja szankciómentes, vagy maximum 600 CP<br>
+                – Valaha bannolt játékos nem lehet leader</p>
+
+                <p><b>Frakció feltételek:</b><br>
+                A szerveren lévő maffiáknak minden esetben rendelkezniük kell valamilyen legális résszel.</p>
+
+                <p><b>Milyen előnyökhöz jutsz?</b><br>
+                – fegyverkészítés<br>
+                – egyedi legális rész<br>
+                – HQ<br>
+                – tároló + kassza<br>
+                – $50.000 kezdőtőke<br>
+                – 2 db középkategóriás jármű + 1 db 4 személyes<br>
+                – kezdő fegyverek és lőszer</p>
+
+                <form action="https://formsubmit.co/noelifi2011@gmail.com" method="POST" enctype="multipart/form-data">
+
+                    <label>Mi a megpályázott maffia neve?</label>
+                    <input type="text" name="Maffia neve" required>
+
+                    <label>Discord név</label>
+                    <input type="text" name="Discord név" required>
+
+                    <label>Steam név</label>
+                    <input type="text" name="Steam név" required>
+
+                    <label>Hány éves vagy?</label>
+                    <input type="number" name="Életkor" required>
+
+                    <label>Mióta RP-zel?</label>
+                    <input type="text" name="RP idő" required>
+
+                    <label>Voltál már szankcionálva GTA V roleplayen?</label>
+                    <select name="Szankcionálva?">
+                        <option>Igen</option>
+                        <option>Nem</option>
+                    </select>
+
+                    <label>Voltál már frakció leader más szerveren?</label>
+                    <select name="Volt leader?">
+                        <option>Igen</option>
+                        <option>Nem</option>
+                    </select>
+
+                    <label>Voltál már maffia leader más szerveren?</label>
+                    <select name="Volt maffia leader?">
+                        <option>Igen</option>
+                        <option>Nem</option>
+                    </select>
+
+                    <label>Mesélj magadról 4-5 mondatban!</label>
+                    <textarea name="Magamról" class="big-textarea"></textarea>
+
+                    <label>Átlagban hány órát tudsz a frakció vezetésére szánni 1 héten?</label>
+                    <input type="text" name="Heti óraszám">
+
+                    <label>Mesélj pár mondatban a frakciódról.</label>
+                    <textarea name="Frakció leírás" class="big-textarea"></textarea>
+
+                    <label>Pár mondatban írd le, hogy Te hogyan vezetnéd a frakciót.</label>
+                    <textarea name="Vezetési stílus" class="big-textarea"></textarea>
+
+                    <label>Milyen legális fedőcéget szeretnél?</label>
+                    <textarea name="Legális rész" class="big-textarea"></textarea>
+
+                    <label>Kezdő létszám?</label>
+                    <input type="number" name="Kezdő létszám">
+
+                    <label>Tölts fel egy .pdf dokumentumot!</label>
+                    <div class="file-drop">Dobd a fájlt ide, vagy válaszd ki alul</div>
+                    <input type="file" name="Fájl" accept=".pdf,.docx,.pptx,.doc,.ppt">
+
+                    <h2>Egyéb kérdések</h2>
+
+                    <label>Mit tennél, ha megunnád a leader szerepet?</label>
+                    <textarea name="Leader lemondás"></textarea>
+
+                    <label>Mit teszel, ha PD kiírja a pénzszállítást?</label>
+                    <textarea name="Pénzszállítás"></textarea>
+
+                    <label>Mit teszel túszhelyzetben?</label>
+                    <textarea name="Túszhelyzet"></textarea>
+
+                    <label>Rejtély megfejtése:</label>
+                    <textarea name="Rejtély"></textarea>
+
+                    <label>Engedélyezett a Discord tagfelvétel?</label>
+                    <select name="Discord tagfelvétel">
+                        <option>Igen, mert van legális rész.</option>
+                        <option>Nem engedélyezett.</option>
+                        <option>Igen, mert a rendőrök is ott csinálják.</option>
+                    </select>
+
+                    <label>Max létszám?</label>
+                    <select name="Max létszám">
+                        <option>24</option>
+                        <option>28</option>
+                        <option>32</option>
+                    </select>
+
+                    <label>Mit teszel jump rang esetén?</label>
+                    <select name="Jump rang">
+                        <option>Felveszem.</option>
+                        <option>Megvárom, míg lejár.</option>
+                        <option>Nem foglalkozom vele.</option>
+                    </select>
+
+                    <div class="checkbox-area">
+                        <input type="checkbox" required>
+                        <label>Elfogadom az adatvédelmi szabályzatot.</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ELKÜLD</button>
+
+                </form>
+
+            </div>
+        </details>
+    </div>
+
+    <!-- BANDA -->
+    <div class="accordion-item">
+        <details>
+            <summary>BANDA</summary>
+            <div class="accordion-content">
+
+                <h2>Banda pályázat</h2>
+
+                <p><b>Leader minimum életkor:</b> 16<br>
+                <b>Al-Leader minimum életkor:</b> 15<br>
+                <b>Minimum kezdő létszám:</b> 4 fő</p>
+
+                <p><b>Leader feltételek:</b><br>
+                – 3 hónapja szankciómentes, vagy maximum 300 CP<br>
+                – Bannolt játékos lehet leader, ha 6 hónapja tiszta</p>
+
+                <p><b>Banda feltételek:</b><br>
+                A bandák nem rendelkezhetnek legális céggel, nem működhetnek maffia-szinten, és nem lehetnek túlzottan
+                szervezettek. A banda RP a környékre, utcai életre, kisebb illegális tevékenységekre épül.</p>
+
+                <p><b>Milyen előnyökhöz jutsz?</b><br>
+                – kisebb fegyverekhez való hozzáférés<br>
+                – banda HQ (kisebb terület)<br>
+                – banda tároló<br>
+                – $20.000 kezdőtőke<br>
+                – 1 db középkategóriás jármű + 1 db motor</p>
+
+                <form action="https://formsubmit.co/noelifi2011@gmail.com" method="POST" enctype="multipart/form-data">
+
+                    <label>Mi a megpályázott banda neve?</label>
+                    <input type="text" name="Banda neve" required>
+
+                    <label>Discord név</label>
+                    <input type="text" name="Discord név" required>
+
+                    <label>Steam név</label>
+                    <input type="text" name="Steam név" required>
+
+                    <label>Hány éves vagy?</label>
+                    <input type="number" name="Életkor" required>
+
+                    <label>Mióta RP-zel?</label>
+                    <input type="text" name="RP idő" required>
+
+                    <label>Voltál már szankcionálva GTA V roleplayen?</label>
+                    <select name="Szankcionálva?">
+                        <option>Igen</option>
+                        <option>Nem</option>
+                    </select>
+
+                    <label>Voltál már frakció leader más szerveren?</label>
+                    <select name="Volt leader?">
+                        <option>Igen</option>
+                        <option>Nem</option>
+                    </select>
+
+                    <label>Voltál már banda leader más szerveren?</label>
+                    <select name="Volt banda leader?">
+                        <option>Igen</option>
+                        <option>Nem</option>
+                    </select>
+
+                    <label>Mesélj magadról 3-4 mondatban!</label>
+                    <textarea name="Magamról" class="big-textarea"></textarea>
+
+                    <label>Átlagban hány órát tudsz a banda vezetésére szánni 1 héten?</label>
+                    <input type="text" name="Heti óraszám">
+
+                    <label>Mesélj pár mondatban a bandáról.</label>
+                    <textarea name="Banda leírás" class="big-textarea"></textarea>
+
+                    <label>Hogyan vezetnéd a bandát?</label>
+                    <textarea name="Vezetési stílus" class="big-textarea"></textarea>
+
+                    <label>Melyik környéken működne a banda?</label>
+                    <textarea name="Környék" class="big-textarea"></textarea>
+
+                    <label>Kezdő létszám?</label>
+                    <input type="number" name="Kezdő létszám">
+
+                    <label>Tölts fel egy .pdf dokumentumot!</label>
+                    <div class="file-drop">Dobd a fájlt ide, vagy válaszd ki alul</div>
+                    <input type="file" name="Fájl" accept=".pdf,.docx,.pptx,.doc,.ppt">
+
+                    <h2>Egyéb kérdések</h2>
+
+                    <label>Mit tennél, ha megunnád a leader szerepet?</label>
+                    <textarea name="Leader lemondás"></textarea>
+
+                    <label>Mit teszel, ha egy másik banda provokál?</label>
+                    <textarea name="Provokáció"></textarea>
+
+                    <label>Mit teszel, ha a banda tagjai OOC vitába keverednek?</label>
+                    <textarea name="OOC vita"></textarea>
+
+                    <label>Mit teszel, ha a banda túl agresszívvá válik?</label>
+                    <textarea name="Agresszió"></textarea>
+
+                    <label>Max létszám?</label>
+                    <select name="Max létszám">
+                        <option>12</option>
+                        <option>16</option>
+                        <option>20</option>
+                    </select>
+
+                    <label>Mit teszel, ha egy tag MG-zik?</label>
+                    <select name="MG eset">
+                        <option>Figyelmeztetem.</option>
+                        <option>Kidobom a bandából.</option>
+                        <option>Jelentem staffnak.</option>
+                    </select>
+
+                    <div class="checkbox-area">
+                        <input type="checkbox" required>
+                        <label>Elfogadom az adatvédelmi szabályzatot.</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">ELKÜLD</button>
+
+                </form>
+
+            </div>
+        </details>
+    </div>
+
+</div>
+
 </body>
 </html>
