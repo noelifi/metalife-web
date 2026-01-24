@@ -13,8 +13,52 @@
             color: #1e6bff;
         }
 
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            color: #1e6bff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: white;
+        }
+
+        .discord-btn {
+            position: absolute;
+            left: 20px;
+            background: #5865F2;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .brand {
+            position: absolute;
+            right: 20px;
+            color: #1e6bff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* CONTENT */
         .content {
-            padding: 40px 10%;
+            padding: 120px 10% 60px 10%;
         }
 
         h1 {
@@ -137,10 +181,30 @@
             margin-left: 8px;
             font-size: 14px;
         }
+
+        @media(max-width: 768px) {
+            .navbar a { margin: 0 8px; font-size: 14px; }
+            .discord-btn { display: none; }
+            .content { padding: 100px 6% 40px 6%; }
+        }
     </style>
 </head>
 
 <body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a class="discord-btn" href="https://discord.gg/HvVTVevCuw">Bejelentkezés Discord-dal</a>
+
+    <a href="index.html">Kezdőlap</a>
+    <a href="whitelist.html">Whitelist</a>
+    <a href="szabalyzat.html">Szabályzat</a>
+    <a href="premium.html">Prémium</a>
+    <a href="frakciok.html">Frakciók</a>
+    <a href="palyazatok.html">Pályázatok</a>
+
+    <div class="brand">MetaLife RP</div>
+</div>
 
 <div class="content">
 
@@ -150,15 +214,15 @@
         Üdvözlünk a pályázatoknál!<br><br>
         Az alábbi lenyíló fülekre kattintva olvashatod az adott frakcióhoz rendelt leírásokat és pályázási feltételeket.
         Tájékoztatunk titeket, hogy a frakciók élére csak komoly jelentkezőket és nagyon jól megírt pályázatokat tudunk
-        elfogadni, így ha szeretnéd, hogy esélyed legyen, jól gondold át a pályázatot mielőtt beküldöd. Kérünk, figyelj
-        a helyesírásra is.<br><br>
+        elfogadni, így ha szeretnéd, hogy esélyed legyen, jól gondold át a pályázatot mielőtt beküldöd, továbbá
+        megkérünk, hogy figyelj a helyesírásra.<br><br>
 
-        Figyelj a feltételek betartására! Amennyiben később kiderül, hogy valamelyik feltételnek nem felel meg a
-        megnyert frakció leadere vagy al-leadere, a frakció CK-ban fog részesülni, és az illetékes vezetőt örökösen
-        kitiltjuk a szerverről!<br><br>
+        Figyelj a feltételek betartására, amennyiben később kiderül, hogy valamelyik feltételnek nem felel meg a
+        megnyert frakció leadere vagy al-leadere, a frakció CK-ban fog részesülni és az illetékes leadert vagy
+        al-leadert örökösen kitiltjuk a szerverről!<br><br>
 
-        A pályázatok folyamatosan nyitva vannak és minden héten átnézzük őket. Emiatt kérünk, ne nyissatok ticketet.
-        A sikeres pályázóknak minden esetben jelezni fogunk.
+        A pályázatok folyamatosan nyitva vannak és minden héten át vannak nézve, megkérünk titeket, hogy emiatt ne
+        nyissatok ticketet, a sikeres pályázóknak minden esetben jelezni fogunk.
     </p>
 
     <!-- MAFFIA -->
@@ -174,22 +238,28 @@
                 <b>Minimum kezdő létszám:</b> 6 fő</p>
 
                 <p><b>Leader feltételek:</b><br>
-                – 6 hónapja szankciómentes, vagy maximum 600 CP<br>
+                – 6 hónapja szankciómentes, vagy maximum 600 CP szankció<br>
                 – Valaha bannolt játékos nem lehet leader</p>
 
                 <p><b>Frakció feltételek:</b><br>
-                A szerveren lévő maffiáknak minden esetben rendelkezniük kell valamilyen legális résszel.</p>
+                A szerveren lévő maffiáknak minden esetben rendelkeznie kell valamilyen legális résszel. A legális rész
+                kitalálása a pályázó feladata, engedjétek el a fantáziátokat!</p>
 
-                <p><b>Milyen előnyökhöz jutsz?</b><br>
-                – fegyverkészítés<br>
-                – egyedi legális rész<br>
-                – HQ<br>
-                – tároló + kassza<br>
-                – $50.000 kezdőtőke<br>
-                – 2 db középkategóriás jármű + 1 db 4 személyes<br>
-                – kezdő fegyverek és lőszer</p>
+                <p><b>Milyen előnyökhöz jutsz, ha pályázol egy maffiát?</b><br>
+                – készíthetsz fegyvereket, a későbbiekben pedig fegyverkiegészítőket<br>
+                – kaptok egy teljesen egyedi legális részt<br>
+                – a frakciótok kapni fog egy HQ-t, ahol összegyűlhettek<br>
+                – a frakciótok kapni fog egy tárolót, illetve külön kasszát<br>
+                – a frakciótok kapni fog $50.000 kezdőpénzt<br>
+                – a frakciótok kapni fog 2 db maximum középkategóriás (max $50.000-ig) 2 személyes autót vagy motort,
+                  illetve 1 db 4 személyes autót<br>
+                – a frakciótok kapni fog néhány kezdő fegyvert és lőszert.<br><br>
+                A frakció Discord szervert mi biztosítjuk a frakciónak, azt ne készítsetek magatoknak előre.
+                </p>
 
                 <form action="https://formsubmit.co/noelifi2011@gmail.com" method="POST" enctype="multipart/form-data">
+
+                    <input type="hidden" name="Frakció típusa" value="Maffia">
 
                     <label>Mi a megpályázott maffia neve?</label>
                     <input type="text" name="Maffia neve" required>
@@ -204,16 +274,16 @@
                     <input type="number" name="Életkor" required>
 
                     <label>Mióta RP-zel?</label>
-                    <input type="text" name="RP idő" required>
+                    <input type="text" name="Mióta RP-zel" required>
 
                     <label>Voltál már szankcionálva GTA V roleplayen?</label>
-                    <select name="Szankcionálva?">
+                    <select name="Volt szankcionálva?">
                         <option>Igen</option>
                         <option>Nem</option>
                     </select>
 
                     <label>Voltál már frakció leader más szerveren?</label>
-                    <select name="Volt leader?">
+                    <select name="Volt frakció leader?">
                         <option>Igen</option>
                         <option>Nem</option>
                     </select>
@@ -230,55 +300,60 @@
                     <label>Átlagban hány órát tudsz a frakció vezetésére szánni 1 héten?</label>
                     <input type="text" name="Heti óraszám">
 
-                    <label>Mesélj pár mondatban a frakciódról.</label>
+                    <label>Mesélj pár mondatban a frakciódról. Mivel lenne különlegesebb az általad vezetett frakció a többihez képest?</label>
                     <textarea name="Frakció leírás" class="big-textarea"></textarea>
 
-                    <label>Pár mondatban írd le, hogy Te hogyan vezetnéd a frakciót.</label>
+                    <label>Pár mondatban írd le, hogy Te hogy vezetnéd a frakciót.</label>
                     <textarea name="Vezetési stílus" class="big-textarea"></textarea>
 
-                    <label>Milyen legális fedőcéget szeretnél?</label>
-                    <textarea name="Legális rész" class="big-textarea"></textarea>
+                    <label>Milyen legális fedőcéget szeretnél a frakciónak?</label>
+                    <textarea name="Legális fedőcég" class="big-textarea"></textarea>
 
-                    <label>Kezdő létszám?</label>
+                    <label>Körülbelül hányan lennétek kezdéskor?</label>
                     <input type="number" name="Kezdő létszám">
 
-                    <label>Tölts fel egy .pdf dokumentumot!</label>
+                    <label>Tölts fel egy .pdf kiterjesztésű dokumentumot a frakciódról!</label>
                     <div class="file-drop">Dobd a fájlt ide, vagy válaszd ki alul</div>
-                    <input type="file" name="Fájl" accept=".pdf,.docx,.pptx,.doc,.ppt">
+                    <input type="file" name="Frakció dokumentum" accept=".pdf,.docx,.pptx,.doc,.ppt">
+
+                    <p style="font-size:12px; margin-top:5px;">
+                        A dokumentumban legyen benne a tervezett HQ, autók, egyéb igények, illetve egy pontos leírás a tervezett legál részről.<br>
+                        Accepted file types: pdf, docx, pptx, doc, ppt – Max. file size: 50 MB – Max. files: 3
+                    </p>
 
                     <h2>Egyéb kérdések</h2>
 
-                    <label>Mit tennél, ha megunnád a leader szerepet?</label>
+                    <label>Mit tennél az alábbi szituációban? Meguntad a leader szerepet, le szeretnéd adni a frakciót.</label>
                     <textarea name="Leader lemondás"></textarea>
 
-                    <label>Mit teszel, ha PD kiírja a pénzszállítást?</label>
-                    <textarea name="Pénzszállítás"></textarea>
+                    <label>Mit tennél az alábbi szituációban? Discordon látod, hogy a PD kiírta a pénzszállítást holnap estére, rá szeretnétek menni a csapatoddal. Mit teszel?</label>
+                    <textarea name="Pénzszállítás szituáció"></textarea>
 
-                    <label>Mit teszel túszhelyzetben?</label>
-                    <textarea name="Túszhelyzet"></textarea>
+                    <label>Mit tennél az alábbi szituációban? Boltot raboltok, egy túszért cserébe azt kéritek a túsztárgyalótól, hogy minden egység távozzon a helyszínről. Az akcióvezető nem engedélyezi a kérésedet.</label>
+                    <textarea name="Túszhelyzet szituáció"></textarea>
 
-                    <label>Rejtély megfejtése:</label>
-                    <textarea name="Rejtély"></textarea>
+                    <label>Fejtsd meg az alábbi kérdést. Egy pár bemegy egy kocsmába. Mindketten kérnek egy whiskey-t jéggel. A férj lehúzza az italt, a hölgy lassan elkortyolja, majd meghal. Miért halt meg a hölgy?</label>
+                    <textarea name="Rejtvény válasz"></textarea>
 
-                    <label>Engedélyezett a Discord tagfelvétel?</label>
-                    <select name="Discord tagfelvétel">
-                        <option>Igen, mert van legális rész.</option>
-                        <option>Nem engedélyezett.</option>
-                        <option>Igen, mert a rendőrök is ott csinálják.</option>
+                    <label>Engedélyezett a Discord kérdőíves tagfelvétel a frakcióba?</label>
+                    <select name="Discord kérdőív">
+                        <option>Igen, hiszen minden maffiának van legális része.</option>
+                        <option>Nem engedélyezett, mert illegális frakcióba tilos Discordon tagfelvételt csinálni.</option>
+                        <option>Igen, hiszen a rendőrök is ott csinálják.</option>
                     </select>
 
-                    <label>Max létszám?</label>
-                    <select name="Max létszám">
+                    <label>Hány ember lehet maximum egy maffiába?</label>
+                    <select name="Max maffia létszám">
                         <option>24</option>
                         <option>28</option>
                         <option>32</option>
                     </select>
 
-                    <label>Mit teszel jump rang esetén?</label>
-                    <select name="Jump rang">
-                        <option>Felveszem.</option>
-                        <option>Megvárom, míg lejár.</option>
-                        <option>Nem foglalkozom vele.</option>
+                    <label>Mit teszel ha egy olyan tag jelentkezik a frakcióba, akin rajta van a frakció jump rang Discordon?</label>
+                    <select name="Frakció jump">
+                        <option>Felveszem a frakcióba, mert a Discord rangok MG-nek minősülnek.</option>
+                        <option>Megvárom amíg lejár a frakció jumpja és felveszem a frakcióba.</option>
+                        <option>Ameddig rajta van a rang nem foglalkozom vele, hiszen akin ilyen rang van nem is jelentkezhet semmilyen frakcióba.</option>
                     </select>
 
                     <div class="checkbox-area">
@@ -308,13 +383,13 @@
 
                 <p><b>Leader feltételek:</b><br>
                 – 3 hónapja szankciómentes, vagy maximum 300 CP<br>
-                – Bannolt játékos lehet leader, ha 6 hónapja tiszta</p>
+                – Bannolt játékos csak akkor lehet leader, ha legalább 6 hónapja szankciómentes</p>
 
                 <p><b>Banda feltételek:</b><br>
-                A bandák nem rendelkezhetnek legális céggel, nem működhetnek maffia-szinten, és nem lehetnek túlzottan
+                A bandák nem rendelkezhetnek legális céggel, nem működhetnek maffia szinten, és nem lehetnek túlzottan
                 szervezettek. A banda RP a környékre, utcai életre, kisebb illegális tevékenységekre épül.</p>
 
-                <p><b>Milyen előnyökhöz jutsz?</b><br>
+                <p><b>Milyen előnyökhöz jutsz, ha pályázol egy bandát?</b><br>
                 – kisebb fegyverekhez való hozzáférés<br>
                 – banda HQ (kisebb terület)<br>
                 – banda tároló<br>
@@ -322,6 +397,8 @@
                 – 1 db középkategóriás jármű + 1 db motor</p>
 
                 <form action="https://formsubmit.co/noelifi2011@gmail.com" method="POST" enctype="multipart/form-data">
+
+                    <input type="hidden" name="Frakció típusa" value="Banda">
 
                     <label>Mi a megpályázott banda neve?</label>
                     <input type="text" name="Banda neve" required>
@@ -336,16 +413,16 @@
                     <input type="number" name="Életkor" required>
 
                     <label>Mióta RP-zel?</label>
-                    <input type="text" name="RP idő" required>
+                    <input type="text" name="Mióta RP-zel" required>
 
                     <label>Voltál már szankcionálva GTA V roleplayen?</label>
-                    <select name="Szankcionálva?">
+                    <select name="Volt szankcionálva?">
                         <option>Igen</option>
                         <option>Nem</option>
                     </select>
 
                     <label>Voltál már frakció leader más szerveren?</label>
-                    <select name="Volt leader?">
+                    <select name="Volt frakció leader?">
                         <option>Igen</option>
                         <option>Nem</option>
                     </select>
@@ -362,45 +439,50 @@
                     <label>Átlagban hány órát tudsz a banda vezetésére szánni 1 héten?</label>
                     <input type="text" name="Heti óraszám">
 
-                    <label>Mesélj pár mondatban a bandáról.</label>
+                    <label>Mesélj pár mondatban a bandáról. Mivel lenne különlegesebb az általad vezetett banda a többihez képest?</label>
                     <textarea name="Banda leírás" class="big-textarea"></textarea>
 
-                    <label>Hogyan vezetnéd a bandát?</label>
+                    <label>Pár mondatban írd le, hogy Te hogyan vezetnéd a bandát.</label>
                     <textarea name="Vezetési stílus" class="big-textarea"></textarea>
 
                     <label>Melyik környéken működne a banda?</label>
                     <textarea name="Környék" class="big-textarea"></textarea>
 
-                    <label>Kezdő létszám?</label>
+                    <label>Körülbelül hányan lennétek kezdéskor?</label>
                     <input type="number" name="Kezdő létszám">
 
-                    <label>Tölts fel egy .pdf dokumentumot!</label>
+                    <label>Tölts fel egy .pdf kiterjesztésű dokumentumot a bandáról!</label>
                     <div class="file-drop">Dobd a fájlt ide, vagy válaszd ki alul</div>
-                    <input type="file" name="Fájl" accept=".pdf,.docx,.pptx,.doc,.ppt">
+                    <input type="file" name="Banda dokumentum" accept=".pdf,.docx,.pptx,.doc,.ppt">
+
+                    <p style="font-size:12px; margin-top:5px;">
+                        A dokumentumban legyen benne a tervezett HQ, autók, egyéb igények, illetve egy pontos leírás a banda működéséről.<br>
+                        Accepted file types: pdf, docx, pptx, doc, ppt – Max. file size: 50 MB – Max. files: 3
+                    </p>
 
                     <h2>Egyéb kérdések</h2>
 
-                    <label>Mit tennél, ha megunnád a leader szerepet?</label>
-                    <textarea name="Leader lemondás"></textarea>
+                    <label>Mit tennél az alábbi szituációban? Meguntad a leader szerepet, le szeretnéd adni a bandát.</label>
+                    <textarea name="Leader lemondás banda"></textarea>
 
-                    <label>Mit teszel, ha egy másik banda provokál?</label>
-                    <textarea name="Provokáció"></textarea>
+                    <label>Mit tennél az alábbi szituációban? Egy másik banda folyamatosan provokál titeket a városban.</label>
+                    <textarea name="Provokáció banda"></textarea>
 
-                    <label>Mit teszel, ha a banda tagjai OOC vitába keverednek?</label>
-                    <textarea name="OOC vita"></textarea>
+                    <label>Mit tennél az alábbi szituációban? A banda tagjai OOC vitába keverednek egymással.</label>
+                    <textarea name="OOC vita banda"></textarea>
 
-                    <label>Mit teszel, ha a banda túl agresszívvá válik?</label>
-                    <textarea name="Agresszió"></textarea>
+                    <label>Mit tennél az alábbi szituációban? A banda túl agresszívvá válik és minden helyzetet lövöldözéssel akarnak megoldani.</label>
+                    <textarea name="Agresszió banda"></textarea>
 
-                    <label>Max létszám?</label>
-                    <select name="Max létszám">
+                    <label>Hány ember lehet maximum egy bandában?</label>
+                    <select name="Max banda létszám">
                         <option>12</option>
                         <option>16</option>
                         <option>20</option>
                     </select>
 
-                    <label>Mit teszel, ha egy tag MG-zik?</label>
-                    <select name="MG eset">
+                    <label>Mit teszel, ha egy tag MG-zik a bandában?</label>
+                    <select name="MG banda">
                         <option>Figyelmeztetem.</option>
                         <option>Kidobom a bandából.</option>
                         <option>Jelentem staffnak.</option>
