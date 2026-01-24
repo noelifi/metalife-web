@@ -2,15 +2,374 @@
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <title>Szabályzat - MetaLife</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaLife RP – Szabályzat</title>
+
     <style>
-        body { background-color: #0a0f1a; color: white; font-family: Arial; }
-        a { color: #4da3ff; }
+        body {
+            margin: 0;
+            background: #000;
+            font-family: Arial, sans-serif;
+            color: #1e6bff;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            width: 100%;
+            padding: 15px 0;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            color: #1e6bff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar a:hover {
+            color: white;
+        }
+
+        .discord-btn {
+            position: absolute;
+            left: 20px;
+            background: #5865F2;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .brand {
+            position: absolute;
+            right: 20px;
+            color: #1e6bff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* CONTENT */
+        .content {
+            padding: 120px 10% 60px 10%;
+        }
+
+        h1 {
+            color: #1e6bff;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: white;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        /* ACCORDION */
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #050505;
+            border: 1px solid #1e6bff;
+        }
+
+        details {
+            background: #050505;
+        }
+
+        summary {
+            cursor: pointer;
+            padding: 14px 16px;
+            font-weight: bold;
+            color: #1e6bff;
+            list-style: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "▼";
+            float: right;
+            font-size: 12px;
+            color: #1e6bff;
+        }
+
+        details[open] summary::after {
+            content: "▲";
+        }
+
+        .accordion-content {
+            padding: 10px 16px 16px 16px;
+            border-top: 1px solid #1e6bff;
+        }
+
+        @media(max-width: 768px) {
+            .navbar a { margin: 0 8px; font-size: 14px; }
+            .discord-btn { display: none; }
+            .content { padding: 100px 6% 40px 6%; }
+        }
     </style>
 </head>
+
 <body>
-<h1>Szabályzat</h1>
-<p>Itt tudod majd feltölteni a szerver szabályzatát.</p>
-<a href="index.html">Vissza</a>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a class="discord-btn" href="https://discord.gg/HvVTVevCuw">Bejelentkezés Discord-dal</a>
+
+    <a href="index.html">Kezdőlap</a>
+    <a href="whitelist.html">Whitelist</a>
+    <a href="szabalyzat.html">Szabályzat</a>
+    <a href="premium.html">Prémium</a>
+    <a href="frakciok.html">Frakciók</a>
+    <a href="kerelem.html">Kérelmek</a>
+
+    <div class="brand">MetaLife RP</div>
+</div>
+
+<div class="content">
+    <h1>MetaLife RP – Szabályzat</h1>
+    <p>
+        A MetaLife RP szerver célja egy stabil, élvezhető, tiszteletteljes és minőségi szerepjátékos közösség
+        fenntartása. A csatlakozással elfogadod az alábbi szabályokat. A szabályzat nem ismerete nem mentesít
+        a következmények alól.
+    </p>
+
+    <!-- 1. Discord szerver szabályzat -->
+    <div class="accordion-item">
+        <details>
+            <summary>Discord szerver szabályzat</summary>
+            <div class="accordion-content">
+                <p>
+                    A Discord szerver a MetaLife RP közösségének elsődleges kommunikációs felülete, ezért minden tag
+                    köteles kulturáltan és tisztelettel viselkedni. A kommunikáció minősége közvetlenül meghatározza
+                    a közösség hangulatát, ezért a sértegetés, provokáció, toxikus viselkedés, személyeskedés vagy
+                    bármilyen konfliktuskereső magatartás szigorúan tilos. A moderátorok feladata a rend fenntartása,
+                    és döntéseik minden esetben véglegesek.
+                </p>
+                <p>
+                    Tilos bármilyen rasszista, szexuális, politikai vagy szélsőséges tartalom megosztása, még humor
+                    formájában is. A hangcsatornákban kötelező a kulturált kommunikáció, a hangtorzítók, soundboardok,
+                    zavaró zajok vagy szándékos hangspam használata nem megengedett. A reklámozás, más szerverek
+                    hirdetése, privát üzenetben való toborzás vagy bármilyen spam tevékenység azonnali kitiltást
+                    vonhat maga után.
+                </p>
+                <p>
+                    A ticket rendszer a hivatalos panaszkezelés és segítségkérés helye. A ticketekben minden játékos
+                    köteles nyugodt, együttműködő hangnemben kommunikálni, és a problémát tényszerűen leírni. A staff
+                    tagokkal való vitatkozás, tiszteletlenség vagy a döntések megkérdőjelezése nem megengedett.
+                    A Discord szerver szabályainak megsértése a FiveM szerveren is következményekkel járhat.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 2. Alap szabályok -->
+    <div class="accordion-item">
+        <details>
+            <summary>Alap szabályok</summary>
+            <div class="accordion-content">
+                <p>
+                    A MetaLife RP szerverre való belépéssel minden játékos elfogadja, hogy a szabályzat teljes
+                    egészében rá vonatkozik. A szabályzat nem ismerete nem mentesít a felelősség alól. A szerver
+                    célja egy stabil, élvezhető, tiszteletteljes és minőségi szerepjátékos környezet biztosítása,
+                    ahol minden játékosnak lehetősége van fejlődni, történetet építeni és élményeket szerezni.
+                </p>
+                <p>
+                    Tilos bármilyen csalás, hack, exploit vagy bug kihasználása. Ha egy játékos hibát talál, köteles
+                    azt azonnal jelenteni a staffnak, és nem használhatja ki előny szerzésére. A trollkodás, griefelés,
+                    mások szándékos szívatása, OOC zaklatása vagy provokálása szigorúan tiltott. A szerveren minden
+                    játékos köteles úgy viselkedni, hogy azzal mások játékélményét ne rontsa.
+                </p>
+                <p>
+                    A staff döntése minden esetben végleges, és a moderátorok mérlegelhetik a büntetés mértékét az
+                    eset súlyossága alapján. A szabályok célja nem a játékosok korlátozása, hanem a közösség védelme
+                    és a szerver minőségének fenntartása.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 3. FiveM szerver alap szabályok -->
+    <div class="accordion-item">
+        <details>
+            <summary>FiveM szerver alap szabályok</summary>
+            <div class="accordion-content">
+                <p>
+                    A szerveren minden játékosnak kötelező betartania az RP alapelveit. A Random Deathmatch (RDM)
+                    és Vehicle Deathmatch (VDM) minden formája tiltott — vagyis nem támadhatsz meg, üthetsz el vagy
+                    ölhetsz meg senkit megfelelő RP indok nélkül. A Metagaming szigorúan tilos: OOC információt nem
+                    használhatsz fel IC helyzetben, például nem kereshetsz rá valakire Discord alapján, és nem
+                    mehetsz oda valakihez csak azért, mert streamben láttad.
+                </p>
+                <p>
+                    A Powergaming szintén tiltott: nem kényszeríthetsz másokra olyan RP-t, amit nem tudnak kivédeni,
+                    és nem csinálhatsz fizikailag lehetetlen dolgokat. A FearRP kötelező: a karakterednek félnie kell
+                    a haláltól, fegyvertől, túlerőtől, és úgy kell viselkednie, ahogy egy valódi ember tenné hasonló
+                    helyzetben.
+                </p>
+                <p>
+                    Combat Logging tilos: nem léphetsz ki a játékból azért, hogy elkerülj egy helyzetet,
+                    letartóztatást vagy halált. A karakterednek következetesnek kell lennie, és nem válthatod le
+                    egyik pillanatról a másikra csak azért, hogy előnyt szerezz.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 4. Rablás, túszejtés és illegális tevékenységek -->
+    <div class="accordion-item">
+        <details>
+            <summary>Rablás, túszejtés és illegális tevékenységek</summary>
+            <div class="accordion-content">
+                <p>
+                    Az illegális tevékenységek — rablás, túszejtés, fegyveres konfliktusok, drogkereskedelem —
+                    csak akkor engedélyezettek, ha azoknak van logikus előzménye, felépítése és következménye.
+                    A rablások nem történhetnek meg egyik pillanatról a másikra, és nem lehetnek indokolatlanok.
+                    A túszejtés csak akkor engedélyezett, ha valóban szükség van rá, és a túsz épségét minden
+                    körülmények között garantálni kell.
+                </p>
+                <p>
+                    A túszokkal való visszaélés, értelmetlen túszejtés, vagy túszok indokolatlan megölése
+                    szigorúan tiltott. Rablást csak akkor kezdhetsz, ha a szerveren megfelelő számú rendőr
+                    van jelen, és a rablás során minden résztvevő köteles tiszteletben tartani a rendőrség
+                    utasításait és az RP folyamatát.
+                </p>
+                <p>
+                    A rendőrök provokálása, indokolatlan lövöldözés, vagy olyan helyzetek erőltetése, amelyek
+                    csak káoszt okoznak, nem megengedett. Az illegál RP célja a történetmesélés, nem pedig
+                    a másik fél szívatása.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 5. Járműhasználat szabályai -->
+    <div class="accordion-item">
+        <details>
+            <summary>Járműhasználat szabályai</summary>
+            <div class="accordion-content">
+                <p>
+                    A járművek használata során minden játékos köteles reálisan vezetni. Tilos sportautóval
+                    terepen száguldozni, irreális ugrásokat végezni, vagy olyan manővereket csinálni, amelyek
+                    a való életben lehetetlenek lennének. Menekülés közben be kell tartani a defekt szabályokat,
+                    és nem lehet járművet spawnolni, cserélni vagy javítani.
+                </p>
+                <p>
+                    A szándékos ütközés, mások járművének rongálása vagy a rendőrök szándékos akadályozása tilos.
+                    A járművek használata minden esetben RP‑hez kötött, és nem lehet őket OOC előny szerzésére
+                    használni.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 6. Halálkezelés (DeathRP) -->
+    <div class="accordion-item">
+        <details>
+            <summary>Halálkezelés (DeathRP)</summary>
+            <div class="accordion-content">
+                <p>
+                    Ha a karaktered meghal, nem emlékezhetsz az eseményekre, amelyek a halálhoz vezettek.
+                    Nem térhetsz vissza a helyszínre 15 percig, és nem keresheted fel azokat, akik részt vettek
+                    a halálodban. A mentős RP-t minden esetben tiszteletben kell tartani — ha a mentős már
+                    elkezdte az ellátást, nem léphetsz ki a szerepből csak azért, mert lejárt a 10 perc.
+                </p>
+                <p>
+                    A halál RP‑nek következményei vannak, és nem használhatod arra, hogy elkerülj egy helyzetet
+                    vagy büntetést. Az öngyilkosság RP csak komoly, felépített történet részeként engedélyezett.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 7. Frakciószabályok -->
+    <div class="accordion-item">
+        <details>
+            <summary>Frakciószabályok</summary>
+            <div class="accordion-content">
+                <p>
+                    A frakciók tagjai — rendőrök, mentősök, szerelők, taxisok stb. — a szerver alapját képezik,
+                    ezért tőlük magasabb szintű RP‑t várunk el. A frakciótagok kötelesek példát mutatni, és nem
+                    élhetnek vissza a rangjukkal vagy jogosultságaikkal.
+                </p>
+                <p>
+                    A frakció eszközeit, járműveit és felszereléseit csak szolgálat közben használhatják.
+                    A frakciók közötti összejátszás, OOC kommunikáció vagy indokolatlan előnyszerzés tilos.
+                    A frakciótagok kötelesek követni a belső protokollokat és a vezetőség utasításait.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 8. Gazdasági szabályok -->
+    <div class="accordion-item">
+        <details>
+            <summary>Gazdasági szabályok</summary>
+            <div class="accordion-content">
+                <p>
+                    A szerver gazdasága érzékeny rendszer, ezért minden játékos köteles tisztességesen játszani.
+                    Tilos a pénzduplázás, bugkihasználás, farmolás exploitálása vagy bármilyen OOC pénzátadás.
+                    A karakterek közötti vagyonátadás csak akkor engedélyezett, ha annak van logikus IC indoka.
+                </p>
+                <p>
+                    A pénzmosás, illegális bevételek elrejtése vagy irreális gazdasági tevékenységek szigorúan
+                    tiltottak. A gazdasági visszaélések súlyos büntetést vonnak maguk után.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 9. Karakterépítés szabályai -->
+    <div class="accordion-item">
+        <details>
+            <summary>Karakterépítés szabályai</summary>
+            <div class="accordion-content">
+                <p>
+                    A karakterednek életszerűnek kell lennie. Nem másolhatsz hírességeket, filmkaraktereket
+                    vagy más játékosokat. A troll karakterek tiltottak, és minden karakterednek saját történettel,
+                    motivációval és személyiséggel kell rendelkeznie.
+                </p>
+                <p>
+                    A több karakter közötti összejátszás tilos — nem adhatnak át egymásnak pénzt, járművet vagy
+                    információt. A karaktered döntései legyenek következetesek, és ne változzanak egyik pillanatról
+                    a másikra OOC okok miatt.
+                </p>
+            </div>
+        </details>
+    </div>
+
+    <!-- 10. Büntetések rendszere -->
+    <div class="accordion-item">
+        <details>
+            <summary>Büntetések rendszere</summary>
+            <div class="accordion-content">
+                <p>
+                    A staff tagok minden esetben mérlegelhetik a büntetés mértékét az eset súlyossága alapján.
+                    A büntetések lehetnek figyelmeztetés, jail, kick, ideiglenes vagy végleges kitiltás.
+                    A súlyos szabálysértések — például cheat, exploit, rasszizmus vagy szándékos szerverrombolás —
+                    azonnali végleges kitiltást vonhatnak maguk után.
+                </p>
+                <p>
+                    A staff döntése végleges, és a játékos köteles elfogadni azt. A büntetések célja nem a bosszú,
+                    hanem a közösség védelme és a szerver minőségének fenntartása.
+                </p>
+            </div>
+        </details>
+    </div>
+
+</div>
+
 </body>
 </html>
