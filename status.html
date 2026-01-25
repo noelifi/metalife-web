@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MetaLife RP – Szerver Státusz</title>
+
+<style>
+    body {
+        margin: 0;
+        background: #000;
+        font-family: Arial, sans-serif;
+        color: #1e6bff;
+        text-align: center;
+        padding: 40px 10%;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: #4da3ff;
+    }
+
+    .status-box {
+        background: #050814;
+        border: 1px solid #1e6bff;
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 600px;
+        margin: 40px auto;
+        box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+
+    .status-indicator {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .online {
+        color: #00ff6a;
+        text-shadow: 0 0 10px #00ff6a;
+    }
+
+    .offline {
+        color: #ff3b3b;
+        text-shadow: 0 0 10px #ff3b3b;
+    }
+
+    .info {
+        font-size: 18px;
+        margin: 10px 0;
+        color: #c9d6ff;
+    }
+
+    .refresh {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #1e6bff;
+        border: none;
+        border-radius: 8px;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .refresh:hover {
+        background: #4d8dff;
+    }
+</style>
+</head>
+
+<body>
+
+<h1>MetaLife RP – Élő Szerver Státusz</h1>
+
+<div class="status-box">
+    <div id="status" class="status-indicator">Betöltés...</div>
+
+    <div class="info" id="servername"></div>
+    <div class="info" id="players"></div>
+    <div class="info" id="ping"></div>
+    <div class="info" id="uptime"></div>
+
+    <button class="refresh" onclick="loadStatus()">Frissítés</button>
+</div>
+
+<script>
+async function loadStatus() {
+    const statusText = document.getElementById("status");
+    const serverName = document.getElementById("servername");
+    const players = document.getElementById("players");
+    const ping = document.getElementById("ping");
+    const uptime = document.getElementById("uptime");
+
+    statusText.textContent = "Betöltés...";
+
+    try {
+        const response = await fetch("https://servers-frontend.fivem.net/api/servers/single/31.56.25.43:30120");
+        const data = await response.json();
+
+        if (!data || !data.Data) {
+            statusText.textContent = "OFFLINE";
+            statusText.className = "status-indicator offline";
+            return;
+        }
+
+        statusText.textContent = "ONLINE";
+        statusText.className = "status-indicator online";
+
+        serverName.textContent = "Szerver neve: " + data.Data.hostname;
+        players.textContent = "Játékosok: " + data.Data.clients + " / " + data.Data.sv_maxclients;
+        ping.textContent = "Ping: " + data.Data.ping + " ms";
+
+        const uptimeSeconds = data.Data.uptime;
+        const hours = Math.floor(uptimeSeconds / 3600);
+        const minutes = Math.floor((uptimeSeconds % 3600) / 60);
+
+        uptime.textContent = "Uptime: " + hours + " óra " + minutes + " perc";
+
+    } catch (error) {
+        statusText.textContent = "OFFLINE";
+        statusText.className = "status-indicator offline";
+    }
+}
+
+loadStatus();
+setInterval(loadStatus, 15000); // 15 másodpercenként frissül
+</script>
+
+</body>
+</html>
