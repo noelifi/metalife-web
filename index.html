@@ -1,484 +1,191 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaLife RolePlay</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetaLife RP</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #02040a;
-            color: #ffffff;
-        }
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    .hero {
+      height: 100vh;
+      background: url('hero-ai.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
 
-        header {
-            background-color: #050814;
-            border-bottom: 2px solid #0d47a1;
-            padding: 15px 40px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
 
-        .nav-bar {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
 
-        .nav-bar a {
-            color: #4da3ff;
-            font-weight: bold;
-            font-size: 16px;
-        }
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
 
-        .nav-bar a:hover {
-            color: #ffffff;
-        }
+    .hero-sub {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
 
-        .hero {
-            width: 100%;
-            min-height: 80vh;
-           background-image: url("https://copilot.microsoft.com/images/generated/6ScKWZ5hAGxKRaPGj6Cs6.jpeg");
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 40px;
-        }
+    .btn {
+      display: inline-block;
+      background: #1e90ff;
+      padding: 12px 25px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+      transition: 0.2s;
+    }
 
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%);
-        }
+    .btn:hover {
+      background: #0f6ed1;
+    }
 
-        .hero-content {
-            position: relative;
-            text-align: right;
-            max-width: 400px;
-        }
+    .section {
+      padding: 60px 10%;
+      border-top: 1px solid #1e90ff;
+      background: #fff;
+      color: #000;
+    }
 
-        .hero-logo-ml {
-            font-size: 80px;
-            font-weight: 900;
-            letter-spacing: 5px;
-            color: #1e88ff;
-            text-shadow: 0 0 15px rgba(30,136,255,0.8);
-        }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-        .hero-logo-metalife {
-            font-size: 26px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 4px;
-            margin-top: 5px;
-        }
+    .step {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
 
-        .section {
-            padding: 60px 10%;
-        }
+    .step img {
+      width: 120px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
 
-        .section-title-center {
-            text-align: center;
-            margin-bottom: 10px;
-            font-size: 26px;
-            color: #4da3ff;
-        }
+    .contact {
+      padding: 60px 10%;
+      background: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-top: 1px solid #1e90ff;
+      color: white;
+    }
 
-        .section-subtitle-center {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 18px;
-            color: #b0c4ff;
-        }
+    .contact-logo {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #1e90ff;
+    }
 
-        .step-block {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-        }
+    form {
+      width: 50%;
+    }
 
-        .step-image {
-            width: 260px;
-            height: 260px;
-            border-radius: 15px;
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
-        }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: none;
+    }
 
-        .step-text {
-            max-width: 420px;
-        }
-
-        .step-title {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: #4da3ff;
-        }
-
-        .step-desc {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #d0d7ff;
-        }
-
-        .btn-box {
-            display: inline-block;
-            padding: 12px 26px;
-            border-radius: 8px;
-            background-color: #1e88ff;
-            color: #ffffff;
-            font-weight: bold;
-            letter-spacing: 1px;
-            box-shadow: 0 0 12px rgba(30,136,255,0.7);
-        }
-
-        .btn-box:hover {
-            background-color: #1565c0;
-        }
-
-        .discord-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            background-color: #5865F2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            font-size: 30px;
-        }
-
-        .discord-logo span {
-            color: white;
-        }
-
-        .section-alt {
-            background-color: #050814;
-        }
-
-        .full-banner {
-            width: 100%;
-            min-height: 260px;
-            background-image: url("https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg");
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            margin-top: 40px;
-        }
-
-        .full-banner-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.85) 100%);
-        }
-
-        .full-banner-content {
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            padding: 40px 10%;
-        }
-
-        .full-banner-text {
-            max-width: 420px;
-            color: #ffffff;
-        }
-
-        .full-banner-text h2 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #4da3ff;
-        }
-
-        .premium-banner {
-            width: 100%;
-            min-height: 220px;
-            background-image: url("https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg");
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            margin-top: 40px;
-        }
-
-        .premium-banner-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.85) 100%);
-        }
-
-        .premium-banner-content {
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            padding: 40px 10%;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .premium-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: #ffd54f;
-            text-shadow: 0 0 10px rgba(255,213,79,0.7);
-        }
-
-        .contact-section {
-            padding: 60px 10%;
-        }
-
-        .contact-box {
-            background-color: #050814;
-            border-radius: 20px;
-            padding: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            align-items: center;
-            border: 1px solid #1e2a4d;
-        }
-
-        .contact-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 30px;
-            background-color: #1e88ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            font-weight: 900;
-            color: #ffffff;
-            box-shadow: 0 0 18px rgba(30,136,255,0.9);
-        }
-
-        .contact-form {
-            flex: 1;
-            min-width: 240px;
-        }
-
-        .contact-form h2 {
-            margin-bottom: 15px;
-            color: #4da3ff;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-top: 10px;
-            margin-bottom: 4px;
-            font-size: 14px;
-            color: #c0c8ff;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #1e2a4d;
-            background-color: #02040a;
-            color: #ffffff;
-            font-size: 14px;
-        }
-
-        .contact-form textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .contact-submit {
-            margin-top: 15px;
-            padding: 10px 24px;
-            border-radius: 8px;
-            border: none;
-            background-color: #757575;
-            color: #ffffff;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .contact-submit:hover {
-            background-color: #9e9e9e;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 13px;
-            color: #7f8cb3;
-            background-color: #02040a;
-            border-top: 1px solid #1e2a4d;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 900px) {
-            .hero {
-                justify-content: center;
-                text-align: center;
-            }
-            .hero-content {
-                text-align: center;
-            }
-            .step-block {
-                text-align: center;
-            }
-            .step-text {
-                text-align: center;
-            }
-            .full-banner-content {
-                padding: 30px 6%;
-            }
-            .premium-banner-content {
-                padding: 30px 6%;
-                justify-content: center;
-                text-align: center;
-            }
-            .contact-box {
-                justify-content: center;
-            }
-            .contact-form {
-                width: 100%;
-            }
-        }
-    </style>
+    .submit {
+      background: gray;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <nav class="nav-bar">
-        <a href="index.html">Kezdőlap</a>
-        <a href="whitelist.html">Whitelist</a>
-        <a href="szabalyzat.html">Szabályzat</a>
-        <a href="premium.html">Prémium Hub</a>
-        <a href="frakciok.html">Frakció Pályázatok</a>
-        <a href="kerelem.html">Kérelmek</a>
-        <a href="sugo.html">Súgó</a>
-        <a href="status.html">Státusz</a>
-    </nav>
-</header>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-title">METALIFE RP</div>
+    <div class="hero-sub">A legújabb magyar FiveM élmény</div>
 
-<section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <div class="hero-logo-ml">ML</div>
-        <div class="hero-logo-metalife">METALIFE</div>
+    <a href="https://discord.gg/HvVTVevCuw" class="btn">Csatlakozás Discordra</a>
+    <a href="whitelist.html" class="btn">Whitelist</a>
+    <a href="szabalyzat.html" class="btn">Szabályzat</a>
+  </div>
+</div>
+
+<!-- HOGYAN KEZDJEM EL -->
+<div class="section">
+  <h2>Hogyan tudok elkezdeni játszani?</h2>
+
+  <div class="step">
+    <img src="whitelist-ai.jpg" alt="Whitelist">
+    <div>
+      <h3>1. Töltsd ki a whitelistet</h3>
+      <a href="whitelist.html" class="btn">Whitelist kitöltése</a>
     </div>
-</section>
+  </div>
 
-<section class="section">
-    <h2 class="section-title-center">Hogyan tudok elkezdeni játszani a szerveren?</h2>
-    <p class="section-subtitle-center">Csak 3 lépés!</p>
-
-    <!-- 1. lépés – Discord -->
-    <div class="step-block">
-        <div class="discord-logo">
-            <span>D</span>
-        </div>
-        <div class="step-text">
-            <div class="step-title">Csatlakozz a Discord szerverünkre!</div>
-            <div class="step-desc">
-                A közösség, a szabályzat, a whitelist és minden fontos információ a Discord szerverünkön érhető el.
-            </div>
-            <a class="btn-box" href="https://discord.gg/HvVTVevCuw" target="_blank">CSATLAKOZÁS</a>
-        </div>
+  <div class="step">
+    <img src="gta-armed-ai.jpg" alt="GTA armed">
+    <div>
+      <h3>2. Csatlakozz a szerverre</h3>
+      <p>IP: hamarosan</p>
     </div>
+  </div>
+</div>
 
-    <!-- 2. lépés – Whitelist -->
-    <div class="step-block section-alt" style="padding: 30px; border-radius: 20px;">
-        <div class="step-image" style="background-image: url('https://images.pexels.com/photos/374016/pexels-photo-374016.jpeg');"></div>
-        <div class="step-text">
-            <div class="step-title">Töltsd ki a whitelist lapot!</div>
-            <div class="step-desc">
-                A szerverre való belépéshez szükséges a whitelist kitöltése. Mutasd meg, hogy komolyan gondolod az RP-t!
-            </div>
-            <a class="btn-box" href="whitelist.html">KITÖLTÉS</a>
-        </div>
-    </div>
+<!-- SZABÁLYZAT -->
+<div class="section">
+  <h2>Mielőtt játszanál, olvasd el a szabályzatot</h2>
+  <a href="szabalyzat.html" class="btn">Szabályzat megnyitása</a>
+</div>
 
-    <!-- 3. lépés – Csatlakozás a szerverre -->
-    <div class="step-block">
-        <div class="step-image" style="background-image: url('https://images.pexels.com/photos/799443/pexels-photo-799443.jpeg');"></div>
-        <div class="step-text">
-            <div class="step-title">Csatlakozz fel a szerverre!</div>
-            <div class="step-desc">
-                Miután whitelistelve lettél, már csak egy lépés választ el a játéktól.  
-                FiveM-ben: <strong>31.56.25.43:30120</strong>
-            </div>
-        </div>
-    </div>
+<!-- PRÉMIUM -->
+<div class="section">
+  <h2>Prémium tárgyak</h2>
+  <a href="premium.html" class="btn">Prémium bolt</a>
+</div>
 
-    <!-- Nagy banner – Szabályzat -->
-    <div class="full-banner">
-        <div class="full-banner-overlay"></div>
-        <div class="full-banner-content">
-            <div class="full-banner-text">
-                <h2>Mielőtt játszani kezdenél, olvasd el a szabályzatot!</h2>
-                <p style="margin-bottom: 20px;">
-                    A tiszta, komoly RP élmény érdekében kérünk, hogy figyelmesen olvasd el a szerver szabályzatát.
-                </p>
-                <a class="btn-box" href="szabalyzat.html">SZABÁLYZAT</a>
-            </div>
-        </div>
-    </div>
+<!-- KAPCSOLAT -->
+<div class="contact">
+  <div class="contact-logo">METALIFE RP</div>
 
-    <!-- Prémium banner -->
-    <div class="premium-banner">
-        <div class="premium-banner-overlay"></div>
-        <div class="premium-banner-content">
-            <div class="premium-text">PRÉMIUM TÁRGYAK</div>
-            <a class="btn-box" href="premium.html">VÁSÁRLÁS</a>
-        </div>
-    </div>
-</section>
-
-<section class="contact-section">
-    <div class="contact-box">
-        <div class="contact-logo">ML</div>
-        <div class="contact-form">
-            <h2>Kapcsolat</h2>
-            <form action="mailto:noelifi2011@gmail.com" method="post" enctype="text/plain">
-                <label for="name">Név</label>
-                <input type="text" id="name" name="Név" placeholder="Add meg a neved">
-
-                <label for="email">E-mail cím</label>
-                <input type="email" id="email" name="Email" placeholder="Add meg az e-mail címed">
-
-                <label for="message">Üzenet</label>
-                <textarea id="message" name="Üzenet" placeholder="Írd ide az üzeneted"></textarea>
-
-                <button type="submit" class="contact-submit">KÜLDÉS</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<footer>
-    MetaLife RolePlay &copy; <span id="year"></span> – Minden jog fenntartva.
-</footer>
-
-<script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <form action="mailto:noelifi2011@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="name" placeholder="Név" required>
+    <input type="email" name="email" placeholder="E-mail" required>
+    <textarea name="message" rows="5" placeholder="Üzenet" required></textarea>
+    <button class="submit" type="submit">Küldés</button>
+  </form>
+</div>
 
 </body>
 </html>
